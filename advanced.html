@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>我的第一個網頁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="block"></div>
+    <div>
+        <button>R</button>
+        <input type="range" min="0" max="255" onchange="settingColor(event,'R')">
+    </div>
+
+    <div>
+        <button>G</button>
+        <input type="range" min="0" max="255" onchange="settingColor(event,'G')">
+    </div>
+
+    <div>
+        <button>B</button>
+        <input type="range" min="0" max="255" onchange="settingColor(event,'B')">
+    </div>
+
+    <div id="setting-block">
+        <input type="button" value="+" onclick="allControlType(event)">
+        <input type="button" value="-" onclick="allControlType(event)">
+        <input type="button" value="?" onclick="allControlType(event)">
+    </div>
+    <script>
+        let block = document.getElementById("block");
+
+        var redNum = 0;
+        var greenNum = 0;
+        var blueNum = 0;
+        block.style.backgroundColor = `rgb(${redNum},${greenNum},${blueNum})`;
+
+        function allControlType(e) {
+            let type = e.currentTarget.value;
+            switch (type) {
+                case '+':
+                    redNum = redNum > 255 ? redNum : redNum + 1;
+                    greenNum = greenNum > 255 ? greenNum : greenNum + 1;
+                    blueNum = blueNum > 255 ? blueNum : blueNum + 1;
+                    break;
+                case '-':
+                    redNum = redNum > 0 ? redNum - 1 : redNum;
+                    greenNum = greenNum > 0 ? greenNum - 1 : greenNum;
+                    blueNum = blueNum > 0 ? blueNum - 1 : blueNum;
+                    break;
+
+                case '?':
+                    redNum = getRandomInt(255);
+                    blueNum = getRandomInt(255);
+                    greenNum = getRandomInt(255);
+                    break;
+            }
+
+            block.style.backgroundColor = `rgb(${redNum},${greenNum},${blueNum})`;
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function settingColor(e, colorType) {
+            let colorValue = e.currentTarget.value;
+            switch (colorType) {
+                case 'R':
+                    redNum = colorValue;
+                    break;
+                case 'G':
+                    greenNum = colorValue;
+                    break;
+                case 'B':
+                    blueNum = colorValue;
+                    break;
+            }
+            block.style.backgroundColor = `rgb(${redNum},${greenNum},${blueNum})`;
+        }
+
+    </script>
+</body>
+
+
+</html>
