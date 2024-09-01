@@ -12,24 +12,43 @@
   <link rel="stylesheet" href="plugins/css/custom.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap" rel="stylesheet">
   <!--Fontawesome 5.12.1-->
-  <script src="https://kit.fontawesome.com/fa483230ea.js" crossorigin="anonymous"></script> <!--Google Font-->
+  <script src="https://kit.fontawesome.com/fa483230ea.js" crossorigin="anonymous"></script>
+  <!--Google Font-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
 
   <title>泰山渡假飯店 - 為了夢想而努力</title>
 </head>
 
 <body>
-  <header>
-
+  <header id="lokinnav" class="bg-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark container">
+      <a class="navbar-brand" href="#lokislider">泰山渡假飯店</a>
+      <!--LOGO-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+        <!--漢堡 ICON-->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <!--主角 MENU-->
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active text-white"><a class="nav-link" href="#lokislider"><i class="fas fa-fw fa-bed mr-2"></i>房型介紹</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lokifacility"><i class="fas fa-fw fa-gamepad mr-2"></i>服務設施</a></li>
+          <li class="nav-item"><a class="nav-link" href="#food"><i class="fas fa-fw fa-utensils mr-2"></i>餐飲美食</a></li>
+          <li class="nav-item"><a class="nav-link" href="#lokitrans"><i class="fas fa-fw fa-map-marker-alt mr-2"></i>交通資訊</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contactUs"><i class="fas fa-fw fa-envelope mr-2"></i>聯絡我們</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
+
   <section id="lokislider" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#lokislider" data-slide-to="0" class="active"></li>
@@ -599,36 +618,53 @@
       </div>
     </article>
   </section>
-  <section id="contactUs" class="container-fluid py-5 bg-dark">
-    <header class="text-center pb-5">
+  <section id="contactUs" class="bg-dark">
+    <header class="text-center container py-5">
       <h2 class="text-info">聯絡我們</h2>
     </header>
-    <article>
-      <form class="w-100">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">訪客姓名</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">連絡電話</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">電子信箱</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress2">問題類型</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-12">
-            <label for="inputCity">需求說明</label>
-            <input type="text" class="form-control" id="inputCity">
+    <article class="container">
+      <form class="form-row">
+        <div class="form-group col-12 col-md-6">
+          <label for="cid_name">訪客姓名</label>
+          <div class="input-group">
+            <input class="form-control" type="text" name="form_name" id="cid_name" placeholder="Full Name" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="form_sex" id="cid_man" value="man">
+                  <label class="form-check-label" for="cid_man">男性</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="form_sex" id="cid_woman" value="woman">
+                  <label class="form-check-label" for="cid_woman">女性</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="form-group col-12 col-md-6">
+          <label for="inputPassword4">連絡電話</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+
+        <div class="form-group col-12 col-md-6">
+          <label for="inputEmail">電子信箱</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="question">問題類型</label>
+          <select class="form-control" id="question">
+            <option selected>住宿相關</option>
+            <option>婚宴訂桌</option>
+            <option>其他</option>
+          </select>
+        </div>
+        <div class="form-group col-12">
+          <label for="cid_msg">需求說明</label>
+          <textarea class="form-control" id="cid_msg" rows="3" placeholder="Writer Your Message..."></textarea>
+        </div>
+
         <div class="form-group col-12 text-center">
           <small class="text-muted">請如實填寫便於信件回覆，我們保證不隨意公開您的留言資訊</small>
           <hr class="border-secondary">

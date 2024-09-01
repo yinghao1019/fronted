@@ -44,8 +44,8 @@ footer > .position-fixed > a {
   width: 25%;
 }
 
-#lokitrans iframe{
-    filter: grayscale(0.75) brightness(0.5);
+#lokitrans iframe {
+  filter: grayscale(0.75) brightness(0.5);
 }
 
 @media (min-width: 992px) {
@@ -92,4 +92,13 @@ footer > .position-fixed > a {
 
 #room-introduction nav {
   flex: 0 1 12%;
+}
+
+#contactUs div.form-group > label {
+  color: white;
+}
+
+/* navbar */
+header, .nav-link{
+  transition: 1000ms ease;
 }
